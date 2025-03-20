@@ -1,0 +1,3 @@
+# Snort Rule Signature Generator 필수 패키지
+scapy>=2.5.0
+colorama>=0.4.4 
