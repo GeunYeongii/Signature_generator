@@ -7,8 +7,6 @@ Snort 규칙을 기반으로 네트워크 패킷을 생성하고 전송해 보�
 - Snort 규칙 파싱 및 분석
 - 규칙 기반 네트워크 패킷 생성  
   `alert tcp any any -> any 25 (msg:"win32/netsky.worm.29568-1"; flow:to_server; content:"|0d 0a 0d 0a|"; content:"AADgAADAAAAAAHRhAAAAcAAAALAAAHRvAAAABAAAAAAAAAAAAAAAAAAA4AAAwAAAAABhAAAA"; distance:515; within:72; classtype:low-rarity; sid:5;)`
-
-    
   ![image](https://github.com/user-attachments/assets/dc5ffaeb-52f2-4f8c-bc0d-0c7c9d53a175)
   ![image](https://github.com/user-attachments/assets/791f8ce1-8da7-42d2-a212-85a938d691e6)
 
@@ -80,6 +78,8 @@ python main.py -r rules.txt -d 192.168.1.100
 
 ## 결과 해석
 패킷 전송 후 다음과 같은 결과 카테고리가 표시된다:
+
+<img src="https://github.com/user-attachments/assets/815da690-d195-4d7a-83ea-8d7e3fa5e68c" alt="image" style="width: 700px;"/>
 
 - **Success**: 패킷이 성공적으로 전송되고 응답을 받음
 - **Rejected**: 연결이 명시적으로 거부됨 (TCP RST 또는 ICMP Unreachable)
