@@ -5,7 +5,13 @@ Snort 규칙을 기반으로 네트워크 패킷을 생성하고 전송해 보�
 
 ## 주요 기능
 - Snort 규칙 파싱 및 분석
-- 규칙 기반 네트워크 패킷 생성
+- 규칙 기반 네트워크 패킷 생성  
+  `alert tcp any any -> any 25 (msg:"win32/netsky.worm.29568-1"; flow:to_server; content:"|0d 0a 0d 0a|"; content:"AADgAADAAAAAAHRhAAAAcAAAALAAAHRvAAAABAAAAAAAAAAAAAAAAAAA4AAAwAAAAABhAAAA"; distance:515; within:72; classtype:low-rarity; sid:5;)`
+
+    
+  ![image](https://github.com/user-attachments/assets/dc5ffaeb-52f2-4f8c-bc0d-0c7c9d53a175)
+  ![image](https://github.com/user-attachments/assets/791f8ce1-8da7-42d2-a212-85a938d691e6)
+
 - 생성된 패킷의 PCAP 파일 저장
 - 네트워크를 통한 패킷 전송
 - 패킷 전송 결과 분석 및 시각화
